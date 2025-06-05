@@ -8,16 +8,12 @@ const groq = new Groq({
 
 
 exports.getExplanation = async (req, res) => {
-    const { code, messages, userMessage } = req.body;
+    const { messages, userMessage } = req.body;
   
     const promptMessages = [
       {
         role: "system",
-        content: "You are an expert frontend mentor. Explain the styling part of the component in brief."
-      },
-      {
-        role: "user",
-        content: `Here is the JSX code:\n\n${code}`
+        content: "Explain the given questions in details and in a brief manner"
       },
       ...(messages || []), 
       {
