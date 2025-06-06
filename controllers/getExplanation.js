@@ -8,6 +8,7 @@ const groq = new Groq({
 
 
 exports.getExplanation = async (req, res) => {
+
     console.log(req.body);
     const messages = req.body;
 
